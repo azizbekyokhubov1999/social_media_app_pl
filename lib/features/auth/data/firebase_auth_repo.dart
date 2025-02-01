@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:social_media_app_pl/features/auth/domain/entities/app_user.dart';
 import 'package:social_media_app_pl/features/auth/domain/repos/auth_repo.dart';
 
@@ -25,5 +26,9 @@ class FirebaseAuthRepo implements AuthRepo {
     // TODO: implement registerWithEmailPassword
     throw UnimplementedError();
   }
+
+  @override
+  // TODO: implement firebaseAuth
+  FirebaseAuth get firebaseAuth => throw UnimplementedError();
 
 }
