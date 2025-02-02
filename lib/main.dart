@@ -4,6 +4,7 @@ import 'package:social_media_app_pl/firebase_options.dart';
 import 'package:social_media_app_pl/themes/light_mode.dart';
 
 import 'features/auth/presentation/pages/login_page.dart';
+import 'features/auth/presentation/pages/register_page.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: lightMode,
-      home: LoginPage(),
+      home: RegisterPage(),
     );
   }
 }
