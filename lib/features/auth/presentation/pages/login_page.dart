@@ -18,7 +18,9 @@ import 'package:social_media_app_pl/features/auth/presentation/components/my_but
 import 'package:social_media_app_pl/features/auth/presentation/components/my_text_field.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+
+  final void Function()? togglePages;
+   LoginPage({super.key, required this.togglePages});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -85,11 +87,26 @@ class _LoginPageState extends State<LoginPage> {
                   height: 50
                 ),
                 // not a member? register now btn
-                Text(
-                    "Not a member? Register now",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                        "Not a member?",
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: widget.togglePages,
+                      child: Text(
+                        " Register now",
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                  ],
                 )
 
               ],

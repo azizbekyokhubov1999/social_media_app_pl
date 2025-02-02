@@ -4,7 +4,8 @@ import '../components/my_button.dart';
 import '../components/my_text_field.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  final void Function()? togglePages;
+   RegisterPage({super.key, required this.togglePages});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -92,11 +93,26 @@ class _RegisterPageState extends State<RegisterPage> {
                     height: 50
                 ),
                 // Already a member? Login now btn
-                Text(
-                  "Already a member? Login now",
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Already a member?",
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: widget.togglePages,
+                      child: Text(
+                        "Login now",
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                  ],
                 )
 
               ],
